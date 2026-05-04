@@ -1,0 +1,22 @@
+# Java/Spring Boot
+backend/demo/target/
+backend/demo/.classpath
+backend/demo/.project
+backend/demo/.settings/
+backend/demo/*.log
+
+# Node/React
+frontend/node_modules/
+frontend/.env
+frontend/build/
+frontend/dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# OS
+.DS_Store
+Thumbs.db
