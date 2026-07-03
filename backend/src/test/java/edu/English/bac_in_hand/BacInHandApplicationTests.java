@@ -1,10 +1,10 @@
-package com.bacInHand.demo;
+package edu.English.bac_in_hand;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class BacInHandApplicationTests {
 
 	@Test
 	void contextLoads() {
