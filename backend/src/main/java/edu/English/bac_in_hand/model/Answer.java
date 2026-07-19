@@ -16,6 +16,6 @@ public class Answer {
 
     @ManyToOne
     @JoinColumn(name = "question_type_id")
-    private QuestionType questionType;
+    private Question.QuestionType questionType;
 
 }

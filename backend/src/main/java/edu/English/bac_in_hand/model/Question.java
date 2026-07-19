@@ -3,6 +3,9 @@ package edu.English.bac_in_hand.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name = "questions")
@@ -20,5 +23,14 @@ public class Question {
     private Exam exam;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL )
-    private List<Answer> possibleAnswers;
+    private Set<Answer> possibleAnswers = new HashSet<>();
+
+    @OneToOne
+    private Answer correctAnswer;
+
+    public enum QuestionType{
+        COMPREHENSION,
+        LANGUAGE,
+        WRITING
+    }
 }
