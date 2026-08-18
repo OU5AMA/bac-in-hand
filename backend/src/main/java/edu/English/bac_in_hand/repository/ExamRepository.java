@@ -8,7 +8,7 @@ import java.util.List;
 public interface ExamRepository extends JpaRepository<Exam, Long> {
     List<Exam> findByYear (Integer year);
     List<Exam> findByExamType (Exam.ExamType examType);
-    List<Exam> findByStream(Exam.StudyStream studyStream);
+    List<Exam> findByStudyStream(Exam.StudyStream studyStream);
     List<Exam> findByYearAndExamTypeAndStudyStream(Integer year, Exam.ExamType examType, Exam.StudyStream studyStream);
 
 

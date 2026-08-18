@@ -12,10 +12,17 @@ import java.util.Set;
 public class Exam {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
+    @Column(nullable = false)
+    private String title;
     private String description;
+    @Column(name = "exam_year")
     private Integer year;
+
+    @Enumerated(EnumType.STRING)
+    private ExamType examType;
+
     @Enumerated(EnumType.STRING)
     private StudyStream studyStream;
     private Integer durationMinutes;

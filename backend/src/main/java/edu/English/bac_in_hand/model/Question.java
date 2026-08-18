@@ -12,7 +12,7 @@ import java.util.Set;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = false, length = 1000)
     private String content;
     @Enumerated(EnumType.STRING)
@@ -26,6 +26,7 @@ public class Question {
     private Set<Answer> possibleAnswers = new HashSet<>();
 
     @OneToOne
+    @JoinColumn(name = "correct_answer_id")
     private Answer correctAnswer;
 
     public enum QuestionType{

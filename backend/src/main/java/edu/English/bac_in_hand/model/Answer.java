@@ -9,13 +9,13 @@ import lombok.Data;
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(nullable = false, length = 1000)
     private String content;
 
     @ManyToOne
-    @JoinColumn(name = "question_type_id")
-    private Question.QuestionType questionType;
+    @JoinColumn(name = "question_id")
+    private Question question;
 
 }

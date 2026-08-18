@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table (name = "exam_attempts")
@@ -20,4 +22,14 @@ public class ExamAttempt {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "exam_id")
+    private Exam exam;
+
+    @OneToMany(mappedBy = "examAttempt", cascade = CascadeType.ALL)
+    private Set<StudentAnswer> studentAnswers = new HashSet<>();
+
+    @OneToOne(mappedBy = "examAttempt", cascade = CascadeType.ALL)
+    private Score score;
 }
